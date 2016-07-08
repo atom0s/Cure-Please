@@ -2122,5 +2122,53 @@ namespace CurePlease.Properties {
                 this["Dematerialize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool plBarElement {
+            get {
+                return ((bool)(this["plBarElement"]));
+            }
+            set {
+                this["plBarElement"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int plBarElement_Spell {
+            get {
+                return ((int)(this["plBarElement_Spell"]));
+            }
+            set {
+                this["plBarElement_Spell"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool plBarStatus {
+            get {
+                return ((bool)(this["plBarStatus"]));
+            }
+            set {
+                this["plBarStatus"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int plBarStatus_Spell {
+            get {
+                return ((int)(this["plBarStatus_Spell"]));
+            }
+            set {
+                this["plBarStatus_Spell"] = value;
+            }
+        }
     }
 }

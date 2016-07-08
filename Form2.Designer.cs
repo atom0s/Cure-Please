@@ -86,6 +86,10 @@ namespace CurePlease
             this.autoPhalanxIILabel = new System.Windows.Forms.Label();
             this.autoHasteLabel = new System.Windows.Forms.Label();
             this.plBuffGroup = new System.Windows.Forms.GroupBox();
+            this.plBarStatus_Spell = new System.Windows.Forms.ComboBox();
+            this.plBarStatus = new System.Windows.Forms.CheckBox();
+            this.plBarElement_Spell = new System.Windows.Forms.ComboBox();
+            this.plBarElement = new System.Windows.Forms.CheckBox();
             this.plGainBoost_spell = new System.Windows.Forms.ComboBox();
             this.plGainBoost = new System.Windows.Forms.CheckBox();
             this.plEnspell_spell = new System.Windows.Forms.ComboBox();
@@ -146,6 +150,7 @@ namespace CurePlease
             this.addWhite = new System.Windows.Forms.CheckBox();
             this.lightArts = new System.Windows.Forms.CheckBox();
             this.whmJAgroup = new System.Windows.Forms.GroupBox();
+            this.DivineCaressBox = new System.Windows.Forms.CheckBox();
             this.divineSealBox = new System.Windows.Forms.CheckBox();
             this.afflatusMisery = new System.Windows.Forms.CheckBox();
             this.afflatusSolace = new System.Windows.Forms.CheckBox();
@@ -1012,6 +1017,10 @@ namespace CurePlease
             // 
             // plBuffGroup
             // 
+            this.plBuffGroup.Controls.Add(this.plBarStatus_Spell);
+            this.plBuffGroup.Controls.Add(this.plBarStatus);
+            this.plBuffGroup.Controls.Add(this.plBarElement_Spell);
+            this.plBuffGroup.Controls.Add(this.plBarElement);
             this.plBuffGroup.Controls.Add(this.plGainBoost_spell);
             this.plBuffGroup.Controls.Add(this.plGainBoost);
             this.plBuffGroup.Controls.Add(this.plEnspell_spell);
@@ -1032,6 +1041,72 @@ namespace CurePlease
             this.plBuffGroup.TabIndex = 5;
             this.plBuffGroup.TabStop = false;
             this.plBuffGroup.Text = "   PL Buffs";
+            // 
+            // plBarStatus_Spell
+            // 
+            this.plBarStatus_Spell.FormattingEnabled = true;
+            this.plBarStatus_Spell.Items.AddRange(new object[] {
+            "Baramnesia ",
+            "Barvirus",
+            "Barparalyze",
+            "Barsilence",
+            "Barpetrify",
+            "Barpoison",
+            "Barblind",
+            "Barsleep",
+            "Baramnesra",
+            "Barvira",
+            "Barparalyzra",
+            "Barsilencera",
+            "Barpetra",
+            "Barpoisonra",
+            "Barblindra",
+            "Barsleepra"});
+            this.plBarStatus_Spell.Location = new System.Drawing.Point(89, 277);
+            this.plBarStatus_Spell.Name = "plBarStatus_Spell";
+            this.plBarStatus_Spell.Size = new System.Drawing.Size(121, 21);
+            this.plBarStatus_Spell.TabIndex = 20;
+            // 
+            // plBarStatus
+            // 
+            this.plBarStatus.AutoSize = true;
+            this.plBarStatus.Location = new System.Drawing.Point(5, 281);
+            this.plBarStatus.Name = "plBarStatus";
+            this.plBarStatus.Size = new System.Drawing.Size(78, 17);
+            this.plBarStatus.TabIndex = 19;
+            this.plBarStatus.Text = "Bar Status:";
+            this.plBarStatus.UseVisualStyleBackColor = true;
+            // 
+            // plBarElement_Spell
+            // 
+            this.plBarElement_Spell.FormattingEnabled = true;
+            this.plBarElement_Spell.Items.AddRange(new object[] {
+            "Barfire",
+            "Barstone",
+            "Barwater",
+            "Baraero",
+            "Barblizzard",
+            "Barthunder",
+            "Barfira",
+            "Barstonra",
+            "Barwatera",
+            "Baraera",
+            "Barblizzara",
+            "Barthundra"});
+            this.plBarElement_Spell.Location = new System.Drawing.Point(89, 254);
+            this.plBarElement_Spell.Name = "plBarElement_Spell";
+            this.plBarElement_Spell.Size = new System.Drawing.Size(121, 21);
+            this.plBarElement_Spell.TabIndex = 18;
+            // 
+            // plBarElement
+            // 
+            this.plBarElement.AutoSize = true;
+            this.plBarElement.Location = new System.Drawing.Point(5, 258);
+            this.plBarElement.Name = "plBarElement";
+            this.plBarElement.Size = new System.Drawing.Size(86, 17);
+            this.plBarElement.TabIndex = 17;
+            this.plBarElement.Text = "Bar Element:";
+            this.plBarElement.UseVisualStyleBackColor = true;
             // 
             // plGainBoost_spell
             // 
@@ -1812,6 +1887,7 @@ namespace CurePlease
             // 
             // whmJAgroup
             // 
+            this.whmJAgroup.Controls.Add(this.DivineCaressBox);
             this.whmJAgroup.Controls.Add(this.divineSealBox);
             this.whmJAgroup.Controls.Add(this.afflatusMisery);
             this.whmJAgroup.Controls.Add(this.afflatusSolace);
@@ -1821,6 +1897,17 @@ namespace CurePlease
             this.whmJAgroup.TabIndex = 0;
             this.whmJAgroup.TabStop = false;
             this.whmJAgroup.Text = "White Mage";
+            // 
+            // DivineCaressBox
+            // 
+            this.DivineCaressBox.AutoSize = true;
+            this.DivineCaressBox.Location = new System.Drawing.Point(6, 88);
+            this.DivineCaressBox.Name = "DivineCaressBox";
+            this.DivineCaressBox.Size = new System.Drawing.Size(91, 17);
+            this.DivineCaressBox.TabIndex = 3;
+            this.DivineCaressBox.Text = "Divine Caress";
+            this.toolTip1.SetToolTip(this.DivineCaressBox, "Will be used, when possible, before any -na spell");
+            this.DivineCaressBox.UseVisualStyleBackColor = true;
             // 
             // divineSealBox
             // 
@@ -3770,5 +3857,10 @@ namespace CurePlease
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown indiRecast;
         private System.Windows.Forms.CheckBox GEO_engaged;
+        private System.Windows.Forms.ComboBox plBarElement_Spell;
+        private System.Windows.Forms.CheckBox plBarElement;
+        private System.Windows.Forms.CheckBox DivineCaressBox;
+        private System.Windows.Forms.ComboBox plBarStatus_Spell;
+        private System.Windows.Forms.CheckBox plBarStatus;
     }
 }
