@@ -228,11 +228,13 @@ namespace CurePlease
             this.plGainBoost_spell.SelectedItem = Properties.Settings.Default.plGainBoost_Spell;
             this.EntrustBox.Checked = Properties.Settings.Default.Entrust;
             this.DematerializeBox.Checked = Properties.Settings.Default.Dematerialize;
-
             this.plBarElement.Checked = Properties.Settings.Default.plBarElement;
             this.plBarElement_Spell.SelectedIndex = Properties.Settings.Default.plBarElement_Spell;
             this.plBarStatus.Checked = Properties.Settings.Default.plBarStatus;
             this.plBarStatus_Spell.SelectedIndex = Properties.Settings.Default.plBarStatus_Spell;
+            this.plStormSpell.Checked = Properties.Settings.Default.plStormSpell;
+            this.plKlimaform.Checked = Properties.Settings.Default.plKlimaform;
+            this.plStormSpell_Spell.SelectedIndex = Properties.Settings.Default.plStormSpell_Spell;
         }
 
         private void curePercentage_ValueChanged(object sender, EventArgs e)
@@ -446,8 +448,6 @@ namespace CurePlease
             Properties.Settings.Default.Entrusted_Target = this.entrustSpell_target.Text;
             Properties.Settings.Default.Entrust = this.EntrustBox.Checked;
             Properties.Settings.Default.Dematerialize = this.DematerializeBox.Checked;
-
-            // Additional PL cast
             Properties.Settings.Default.plTemper = this.plTemper.Checked;
             if (this.plTemperLevel1.Checked)
             {
@@ -461,12 +461,13 @@ namespace CurePlease
             Properties.Settings.Default.plEnspell_Spell = this.plEnspell_spell.SelectedIndex;
             Properties.Settings.Default.plGainBoost = this.plGainBoost.Checked;
             Properties.Settings.Default.plGainBoost_Spell = (string)this.plGainBoost_spell.SelectedItem;
-
             Properties.Settings.Default.plBarElement = this.plBarElement.Checked;
             Properties.Settings.Default.plBarElement_Spell = this.plBarElement_Spell.SelectedIndex;
             Properties.Settings.Default.plBarStatus = this.plBarStatus.Checked;
             Properties.Settings.Default.plBarStatus_Spell = this.plBarStatus_Spell.SelectedIndex;
-
+            Properties.Settings.Default.plStormSpell = this.plStormSpell.Checked;
+            Properties.Settings.Default.plStormSpell_Spell = this.plStormSpell_Spell.SelectedIndex;
+            Properties.Settings.Default.plKlimaform = this.plKlimaform.Checked;
 
             Properties.Settings.Default.Save();            
             this.Close();
@@ -1148,11 +1149,18 @@ namespace CurePlease
             Properties.Settings.Default.plBarElement_Spell = this.plBarElement_Spell.SelectedIndex;
             Properties.Settings.Default.plBarStatus = this.plBarStatus.Checked;
             Properties.Settings.Default.plBarStatus_Spell = this.plBarStatus_Spell.SelectedIndex;
+            Properties.Settings.Default.plStormSpell = this.plStormSpell.Checked;
+            Properties.Settings.Default.plStormSpell_Spell = this.plStormSpell_Spell.SelectedIndex;
+            Properties.Settings.Default.plKlimaform = this.plKlimaform.Checked;
 
 
             Properties.Settings.Default.Save();
         }
 
+        private void plShellralevel_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
         #endregion
 }

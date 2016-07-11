@@ -2170,5 +2170,41 @@ namespace CurePlease.Properties {
                 this["plBarStatus_Spell"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool plKlimaform {
+            get {
+                return ((bool)(this["plKlimaform"]));
+            }
+            set {
+                this["plKlimaform"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool plStormSpell {
+            get {
+                return ((bool)(this["plStormSpell"]));
+            }
+            set {
+                this["plStormSpell"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int plStormSpell_Spell {
+            get {
+                return ((int)(this["plStormSpell_Spell"]));
+            }
+            set {
+                this["plStormSpell_Spell"] = value;
+            }
+        }
     }
 }
