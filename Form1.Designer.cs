@@ -76,6 +76,7 @@ namespace CurePlease
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.EntrustTargetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GeoTargetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DevotionTargetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.autoHasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoHasteIIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -186,7 +187,9 @@ namespace CurePlease
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshCharactersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chatLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.partyBuffsdebugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -217,6 +220,9 @@ namespace CurePlease
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.debugging_MSGBOX = new System.Windows.Forms.Label();
+            this.AilmentChecker = new System.ComponentModel.BackgroundWorker();
+            this.buff_checker = new System.ComponentModel.BackgroundWorker();
+            this.followTimer = new System.Windows.Forms.Timer(this.components);
             this.party0.SuspendLayout();
             this.playerOptions.SuspendLayout();
             this.party2.SuspendLayout();
@@ -735,6 +741,7 @@ namespace CurePlease
             this.toolStripSeparator2,
             this.EntrustTargetToolStripMenuItem,
             this.GeoTargetToolStripMenuItem,
+            this.DevotionTargetToolStripMenuItem,
             this.toolStripSeparator7,
             this.autoHasteToolStripMenuItem,
             this.autoHasteIIToolStripMenuItem,
@@ -768,43 +775,50 @@ namespace CurePlease
             this.protectToolStripMenuItem,
             this.shellToolStripMenuItem});
             this.playerOptions.Name = "player0rightclick";
-            this.playerOptions.Size = new System.Drawing.Size(193, 684);
+            this.playerOptions.Size = new System.Drawing.Size(196, 706);
             // 
             // followToolStripMenuItem
             // 
             this.followToolStripMenuItem.Name = "followToolStripMenuItem";
-            this.followToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.followToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.followToolStripMenuItem.Text = "/follow";
             this.followToolStripMenuItem.Click += new System.EventHandler(this.followToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(189, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(192, 6);
             // 
             // EntrustTargetToolStripMenuItem
             // 
             this.EntrustTargetToolStripMenuItem.Name = "EntrustTargetToolStripMenuItem";
-            this.EntrustTargetToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.EntrustTargetToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.EntrustTargetToolStripMenuItem.Text = "Make Entrusted Target";
             this.EntrustTargetToolStripMenuItem.Click += new System.EventHandler(this.EntrustTargetToolStripMenuItem_Click);
             // 
             // GeoTargetToolStripMenuItem
             // 
             this.GeoTargetToolStripMenuItem.Name = "GeoTargetToolStripMenuItem";
-            this.GeoTargetToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.GeoTargetToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.GeoTargetToolStripMenuItem.Text = "Make GEO-Spell Target";
             this.GeoTargetToolStripMenuItem.Click += new System.EventHandler(this.GeoTargetToolStripMenuItem_Click);
+            // 
+            // DevotionTargetToolStripMenuItem
+            // 
+            this.DevotionTargetToolStripMenuItem.Name = "DevotionTargetToolStripMenuItem";
+            this.DevotionTargetToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.DevotionTargetToolStripMenuItem.Text = "Make Devotion Target";
+            this.DevotionTargetToolStripMenuItem.Click += new System.EventHandler(this.DevotionTargetToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(189, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(192, 6);
             // 
             // autoHasteToolStripMenuItem
             // 
             this.autoHasteToolStripMenuItem.Name = "autoHasteToolStripMenuItem";
-            this.autoHasteToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.autoHasteToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.autoHasteToolStripMenuItem.Text = "Auto Haste";
             this.autoHasteToolStripMenuItem.ToolTipText = "Auto Haste (Default 3 minutes)";
             this.autoHasteToolStripMenuItem.Click += new System.EventHandler(this.autoHasteToolStripMenuItem_Click);
@@ -812,7 +826,7 @@ namespace CurePlease
             // autoHasteIIToolStripMenuItem
             // 
             this.autoHasteIIToolStripMenuItem.Name = "autoHasteIIToolStripMenuItem";
-            this.autoHasteIIToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.autoHasteIIToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.autoHasteIIToolStripMenuItem.Text = "Auto Haste II";
             this.autoHasteIIToolStripMenuItem.ToolTipText = "Auto Haste II (Default 3 minutes)";
             this.autoHasteIIToolStripMenuItem.Click += new System.EventHandler(this.autoHasteIIToolStripMenuItem_Click);
@@ -820,7 +834,7 @@ namespace CurePlease
             // autoFlurryToolStripMenuItem
             // 
             this.autoFlurryToolStripMenuItem.Name = "autoFlurryToolStripMenuItem";
-            this.autoFlurryToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.autoFlurryToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.autoFlurryToolStripMenuItem.Text = "Auto Flurry";
             this.autoFlurryToolStripMenuItem.ToolTipText = "Auto Flurry (Default 3 minutes)";
             this.autoFlurryToolStripMenuItem.Click += new System.EventHandler(this.autoFlurryToolStripMenuItem_Click);
@@ -828,7 +842,7 @@ namespace CurePlease
             // autoFlurryIIToolStripMenuItem
             // 
             this.autoFlurryIIToolStripMenuItem.Name = "autoFlurryIIToolStripMenuItem";
-            this.autoFlurryIIToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.autoFlurryIIToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.autoFlurryIIToolStripMenuItem.Text = "Auto Flurry II";
             this.autoFlurryIIToolStripMenuItem.ToolTipText = "Auto Flurry II (Default 3 minutes)";
             this.autoFlurryIIToolStripMenuItem.Click += new System.EventHandler(this.autoFlurryIIToolStripMenuItem_Click);
@@ -836,167 +850,167 @@ namespace CurePlease
             // autoShellToolStripMenuItem
             // 
             this.autoShellToolStripMenuItem.Name = "autoShellToolStripMenuItem";
-            this.autoShellToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.autoShellToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.autoShellToolStripMenuItem.Text = "Auto Shell";
             this.autoShellToolStripMenuItem.Click += new System.EventHandler(this.autoShellToolStripMenuItem_Click);
             // 
             // autoProtectToolStripMenuItem
             // 
             this.autoProtectToolStripMenuItem.Name = "autoProtectToolStripMenuItem";
-            this.autoProtectToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.autoProtectToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.autoProtectToolStripMenuItem.Text = "Auto Protect";
             this.autoProtectToolStripMenuItem.Click += new System.EventHandler(this.autoProtectToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(189, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(192, 6);
             // 
             // hasteToolStripMenuItem
             // 
             this.hasteToolStripMenuItem.Name = "hasteToolStripMenuItem";
-            this.hasteToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.hasteToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.hasteToolStripMenuItem.Text = "Haste";
             this.hasteToolStripMenuItem.Click += new System.EventHandler(this.hasteToolStripMenuItem_Click);
             // 
             // sneakToolStripMenuItem
             // 
             this.sneakToolStripMenuItem.Name = "sneakToolStripMenuItem";
-            this.sneakToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.sneakToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.sneakToolStripMenuItem.Text = "Sneak";
             this.sneakToolStripMenuItem.Click += new System.EventHandler(this.sneakToolStripMenuItem_Click);
             // 
             // invisibleToolStripMenuItem
             // 
             this.invisibleToolStripMenuItem.Name = "invisibleToolStripMenuItem";
-            this.invisibleToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.invisibleToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.invisibleToolStripMenuItem.Text = "Invisible";
             this.invisibleToolStripMenuItem.Click += new System.EventHandler(this.invisibleToolStripMenuItem_Click);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // refreshIIToolStripMenuItem
             // 
             this.refreshIIToolStripMenuItem.Name = "refreshIIToolStripMenuItem";
-            this.refreshIIToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.refreshIIToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.refreshIIToolStripMenuItem.Text = "Refresh II";
             this.refreshIIToolStripMenuItem.Click += new System.EventHandler(this.refreshIIToolStripMenuItem_Click);
             // 
             // phalanxIIToolStripMenuItem
             // 
             this.phalanxIIToolStripMenuItem.Name = "phalanxIIToolStripMenuItem";
-            this.phalanxIIToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.phalanxIIToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.phalanxIIToolStripMenuItem.Text = "Phalanx II";
             this.phalanxIIToolStripMenuItem.Click += new System.EventHandler(this.phalanxIIToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(189, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(192, 6);
             // 
             // regenIIToolStripMenuItem
             // 
             this.regenIIToolStripMenuItem.Name = "regenIIToolStripMenuItem";
-            this.regenIIToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.regenIIToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.regenIIToolStripMenuItem.Text = "Regen II";
             this.regenIIToolStripMenuItem.Click += new System.EventHandler(this.regenIIToolStripMenuItem_Click);
             // 
             // regenIIIToolStripMenuItem
             // 
             this.regenIIIToolStripMenuItem.Name = "regenIIIToolStripMenuItem";
-            this.regenIIIToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.regenIIIToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.regenIIIToolStripMenuItem.Text = "Regen III";
             this.regenIIIToolStripMenuItem.Click += new System.EventHandler(this.regenIIIToolStripMenuItem_Click);
             // 
             // regenIVToolStripMenuItem
             // 
             this.regenIVToolStripMenuItem.Name = "regenIVToolStripMenuItem";
-            this.regenIVToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.regenIVToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.regenIVToolStripMenuItem.Text = "Regen IV";
             this.regenIVToolStripMenuItem.Click += new System.EventHandler(this.regenIVToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(189, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(192, 6);
             // 
             // eraseToolStripMenuItem
             // 
             this.eraseToolStripMenuItem.Name = "eraseToolStripMenuItem";
-            this.eraseToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.eraseToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.eraseToolStripMenuItem.Text = "Erase";
             this.eraseToolStripMenuItem.Click += new System.EventHandler(this.eraseToolStripMenuItem_Click);
             // 
             // sacrificeToolStripMenuItem
             // 
             this.sacrificeToolStripMenuItem.Name = "sacrificeToolStripMenuItem";
-            this.sacrificeToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.sacrificeToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.sacrificeToolStripMenuItem.Text = "Sacrifice";
             this.sacrificeToolStripMenuItem.Click += new System.EventHandler(this.sacrificeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(189, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(192, 6);
             // 
             // blindnaToolStripMenuItem
             // 
             this.blindnaToolStripMenuItem.Name = "blindnaToolStripMenuItem";
-            this.blindnaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.blindnaToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.blindnaToolStripMenuItem.Text = "Blindna";
             this.blindnaToolStripMenuItem.Click += new System.EventHandler(this.blindnaToolStripMenuItem_Click);
             // 
             // cursnaToolStripMenuItem
             // 
             this.cursnaToolStripMenuItem.Name = "cursnaToolStripMenuItem";
-            this.cursnaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.cursnaToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.cursnaToolStripMenuItem.Text = "Cursna";
             this.cursnaToolStripMenuItem.Click += new System.EventHandler(this.cursnaToolStripMenuItem_Click);
             // 
             // paralynaToolStripMenuItem
             // 
             this.paralynaToolStripMenuItem.Name = "paralynaToolStripMenuItem";
-            this.paralynaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.paralynaToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.paralynaToolStripMenuItem.Text = "Paralyna";
             this.paralynaToolStripMenuItem.Click += new System.EventHandler(this.paralynaToolStripMenuItem_Click);
             // 
             // poisonaToolStripMenuItem
             // 
             this.poisonaToolStripMenuItem.Name = "poisonaToolStripMenuItem";
-            this.poisonaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.poisonaToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.poisonaToolStripMenuItem.Text = "Poisona";
             this.poisonaToolStripMenuItem.Click += new System.EventHandler(this.poisonaToolStripMenuItem_Click);
             // 
             // stonaToolStripMenuItem
             // 
             this.stonaToolStripMenuItem.Name = "stonaToolStripMenuItem";
-            this.stonaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.stonaToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.stonaToolStripMenuItem.Text = "Stona";
             this.stonaToolStripMenuItem.Click += new System.EventHandler(this.stonaToolStripMenuItem_Click);
             // 
             // silenaToolStripMenuItem
             // 
             this.silenaToolStripMenuItem.Name = "silenaToolStripMenuItem";
-            this.silenaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.silenaToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.silenaToolStripMenuItem.Text = "Silena";
             this.silenaToolStripMenuItem.Click += new System.EventHandler(this.silenaToolStripMenuItem_Click);
             // 
             // virunaToolStripMenuItem
             // 
             this.virunaToolStripMenuItem.Name = "virunaToolStripMenuItem";
-            this.virunaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.virunaToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.virunaToolStripMenuItem.Text = "Viruna";
             this.virunaToolStripMenuItem.Click += new System.EventHandler(this.virunaToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(189, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(192, 6);
             // 
             // protectToolStripMenuItem
             // 
@@ -1004,20 +1018,20 @@ namespace CurePlease
             this.protectIVToolStripMenuItem,
             this.protectVToolStripMenuItem});
             this.protectToolStripMenuItem.Name = "protectToolStripMenuItem";
-            this.protectToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.protectToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.protectToolStripMenuItem.Text = "Protect ";
             // 
             // protectIVToolStripMenuItem
             // 
             this.protectIVToolStripMenuItem.Name = "protectIVToolStripMenuItem";
-            this.protectIVToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.protectIVToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.protectIVToolStripMenuItem.Text = "Protect IV";
             this.protectIVToolStripMenuItem.Click += new System.EventHandler(this.protectIVToolStripMenuItem_Click);
             // 
             // protectVToolStripMenuItem
             // 
             this.protectVToolStripMenuItem.Name = "protectVToolStripMenuItem";
-            this.protectVToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.protectVToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.protectVToolStripMenuItem.Text = "Protect V";
             this.protectVToolStripMenuItem.Click += new System.EventHandler(this.protectVToolStripMenuItem_Click);
             // 
@@ -1027,7 +1041,7 @@ namespace CurePlease
             this.shellIVToolStripMenuItem,
             this.shellVToolStripMenuItem});
             this.shellToolStripMenuItem.Name = "shellToolStripMenuItem";
-            this.shellToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.shellToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.shellToolStripMenuItem.Text = "Shell";
             // 
             // shellIVToolStripMenuItem
@@ -1905,7 +1919,9 @@ namespace CurePlease
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
-            this.chatLogToolStripMenuItem});
+            this.refreshCharactersToolStripMenuItem,
+            this.chatLogToolStripMenuItem,
+            this.partyBuffsdebugToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
             this.optionsToolStripMenuItem.Text = "Options";
@@ -1913,16 +1929,30 @@ namespace CurePlease
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.settingsToolStripMenuItem.Text = "Settings...";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // refreshCharactersToolStripMenuItem
+            // 
+            this.refreshCharactersToolStripMenuItem.Name = "refreshCharactersToolStripMenuItem";
+            this.refreshCharactersToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.refreshCharactersToolStripMenuItem.Text = "Reload monitored characters";
+            this.refreshCharactersToolStripMenuItem.Click += new System.EventHandler(this.refreshCharactersToolStripMenuItem_Click);
             // 
             // chatLogToolStripMenuItem
             // 
             this.chatLogToolStripMenuItem.Name = "chatLogToolStripMenuItem";
-            this.chatLogToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.chatLogToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.chatLogToolStripMenuItem.Text = "Chat Log";
             this.chatLogToolStripMenuItem.Click += new System.EventHandler(this.chatLogToolStripMenuItem_Click);
+            // 
+            // partyBuffsdebugToolStripMenuItem
+            // 
+            this.partyBuffsdebugToolStripMenuItem.Name = "partyBuffsdebugToolStripMenuItem";
+            this.partyBuffsdebugToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.partyBuffsdebugToolStripMenuItem.Text = "Party Buffs (debug)";
+            this.partyBuffsdebugToolStripMenuItem.Click += new System.EventHandler(this.partyBuffsdebugToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -1934,13 +1964,13 @@ namespace CurePlease
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(43, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -1993,10 +2023,10 @@ namespace CurePlease
             this.pauseButton.Enabled = false;
             this.pauseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold);
             this.pauseButton.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.pauseButton.Location = new System.Drawing.Point(531, 35);
+            this.pauseButton.Location = new System.Drawing.Point(397, 36);
             this.pauseButton.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.pauseButton.Name = "pauseButton";
-            this.pauseButton.Size = new System.Drawing.Size(107, 46);
+            this.pauseButton.Size = new System.Drawing.Size(244, 46);
             this.pauseButton.TabIndex = 10;
             this.pauseButton.Text = "Pause";
             this.toolTips.SetToolTip(this.pauseButton, "Pauses Bot");
@@ -2043,7 +2073,7 @@ namespace CurePlease
             // 
             // castingLockTimer
             // 
-            this.castingLockTimer.Interval = 2000;
+            this.castingLockTimer.Interval = 500;
             this.castingLockTimer.Tick += new System.EventHandler(this.castingLockTimer_Tick);
             // 
             // button1
@@ -2077,12 +2107,12 @@ namespace CurePlease
             // 
             // castingUnlockTimer
             // 
-            this.castingUnlockTimer.Interval = 3000;
+            this.castingUnlockTimer.Interval = 200;
             this.castingUnlockTimer.Tick += new System.EventHandler(this.castingUnlockTimer_Tick);
             // 
             // actionUnlockTimer
             // 
-            this.actionUnlockTimer.Interval = 3000;
+            this.actionUnlockTimer.Interval = 1000;
             this.actionUnlockTimer.Tick += new System.EventHandler(this.actionUnlockTimer_Tick);
             // 
             // autoOptions
@@ -2092,26 +2122,26 @@ namespace CurePlease
             this.autoRegenVToolStripMenuItem,
             this.autoRefreshIIToolStripMenuItem});
             this.autoOptions.Name = "proshellOptions";
-            this.autoOptions.Size = new System.Drawing.Size(152, 70);
+            this.autoOptions.Size = new System.Drawing.Size(154, 70);
             // 
             // autoPhalanxIIToolStripMenuItem1
             // 
             this.autoPhalanxIIToolStripMenuItem1.Name = "autoPhalanxIIToolStripMenuItem1";
-            this.autoPhalanxIIToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.autoPhalanxIIToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.autoPhalanxIIToolStripMenuItem1.Text = "Auto Phalanx II";
             this.autoPhalanxIIToolStripMenuItem1.Click += new System.EventHandler(this.autoPhalanxIIToolStripMenuItem1_Click);
             // 
             // autoRegenVToolStripMenuItem
             // 
             this.autoRegenVToolStripMenuItem.Name = "autoRegenVToolStripMenuItem";
-            this.autoRegenVToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.autoRegenVToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.autoRegenVToolStripMenuItem.Text = "Auto Regen";
             this.autoRegenVToolStripMenuItem.Click += new System.EventHandler(this.autoRegenVToolStripMenuItem_Click);
             // 
             // autoRefreshIIToolStripMenuItem
             // 
             this.autoRefreshIIToolStripMenuItem.Name = "autoRefreshIIToolStripMenuItem";
-            this.autoRefreshIIToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.autoRefreshIIToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.autoRefreshIIToolStripMenuItem.Text = "Auto Refresh";
             this.autoRefreshIIToolStripMenuItem.Click += new System.EventHandler(this.autoRefreshIIToolStripMenuItem_Click);
             // 
@@ -2184,6 +2214,19 @@ namespace CurePlease
             this.debugging_MSGBOX.Size = new System.Drawing.Size(0, 13);
             this.debugging_MSGBOX.TabIndex = 22;
             // 
+            // buff_checker
+            // 
+            this.buff_checker.WorkerReportsProgress = true;
+            this.buff_checker.WorkerSupportsCancellation = true;
+            this.buff_checker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.buff_checker_DoWork);
+            this.buff_checker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.buff_checker_RunWorkerCompleted);
+            // 
+            // followTimer
+            // 
+            this.followTimer.Enabled = true;
+            this.followTimer.Interval = 500;
+            this.followTimer.Tick += new System.EventHandler(this.followTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2216,6 +2259,7 @@ namespace CurePlease
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Cure Please v. 2.0.0.5";
             this.TransparencyKey = System.Drawing.Color.Silver;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.party0.ResumeLayout(false);
             this.party0.PerformLayout();
             this.playerOptions.ResumeLayout(false);
@@ -2418,6 +2462,7 @@ namespace CurePlease
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem GeoTargetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem EntrustTargetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DevotionTargetToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem autoHasteIIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autoFlurryToolStripMenuItem;
@@ -2427,6 +2472,11 @@ namespace CurePlease
         public Button setinstance;
         public Button setinstance2;
         public Label debugging_MSGBOX;
+        private ToolStripMenuItem refreshCharactersToolStripMenuItem;
+        private ToolStripMenuItem partyBuffsdebugToolStripMenuItem;
+        public System.ComponentModel.BackgroundWorker AilmentChecker;
+        private System.ComponentModel.BackgroundWorker buff_checker;
+        private Timer followTimer;
     }
 }
 

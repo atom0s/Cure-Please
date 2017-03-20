@@ -148,6 +148,7 @@ namespace CurePlease
             this.naPlague.Checked = Properties.Settings.Default.naPlague;
             this.naPoison.Checked = Properties.Settings.Default.naPoison;
             this.naSilence.Checked = Properties.Settings.Default.naSilence;
+            this.naErase.Checked = Properties.Settings.Default.naErase;
             this.plProtectra.Checked = Properties.Settings.Default.plProtectra;
             this.plShellra.Checked = Properties.Settings.Default.plShellra;
             this.plProtectralevel.Value = Properties.Settings.Default.plProtectralevel;
@@ -212,6 +213,13 @@ namespace CurePlease
             this.entrustINDISpell.SelectedIndex = Properties.Settings.Default.EntrustedIndiSpell;
             this.entrustSpell_target.Text = Properties.Settings.Default.Entrusted_Target;
             this.EnableLuopanSpells.Checked = Properties.Settings.Default.EnableLuopanSpells;
+            this.BlazeOfGloryBox.Checked = Properties.Settings.Default.BlazeOfGlory;
+            this.autoTarget.Checked = Properties.Settings.Default.AutoTarget;
+            this.autoTargetSpell.Text = Properties.Settings.Default.autoTargetSpell;
+            this.RadialArcanaBox.Checked = Properties.Settings.Default.RadialArcana;
+            this.RadialArcanaMP.Value = Properties.Settings.Default.RadialArcanaMP;
+            this.FullCircleBox.Checked = Properties.Settings.Default.FullCircle;
+
             // Additional PL cast
             this.plTemper.Checked = Properties.Settings.Default.plTemper;
             if (Properties.Settings.Default.plTemperLevel == 1 && this.plTemper.Checked == true)
@@ -236,6 +244,47 @@ namespace CurePlease
             this.plKlimaform.Checked = Properties.Settings.Default.plKlimaform;
             this.plStormSpell_Spell.SelectedIndex = Properties.Settings.Default.plStormSpell_Spell;
             this.plAuspice.Checked = Properties.Settings.Default.plAuspice;
+            this.plAquaveil.Checked = Properties.Settings.Default.plAquaveil;
+
+            this.ConvertMP.Value = Properties.Settings.Default.ConvertMP;
+
+            // CURAGA SPELLS 
+            this.curagaEnabled.Checked = Properties.Settings.Default.curagaEnabled;
+            this.curaga2Enabled.Checked = Properties.Settings.Default.curaga2Enabled;
+            this.curaga3Enabled.Checked = Properties.Settings.Default.curaga3Enabled;
+            this.curaga4Enabled.Checked = Properties.Settings.Default.curaga4Enabled;
+            this.curaga5Enabled.Checked = Properties.Settings.Default.curaga5Enabled;
+
+            this.curagaAmount.Value = Properties.Settings.Default.curagaAmount;
+            this.curaga2Amount.Value = Properties.Settings.Default.curaga2Amount;
+            this.curaga3Amount.Value = Properties.Settings.Default.curaga3Amount;
+            this.curaga4Amount.Value = Properties.Settings.Default.curaga4Amount;
+            this.curaga5Amount.Value = Properties.Settings.Default.curaga5Amount;
+
+            this.curagaCurePercentage.Value = Properties.Settings.Default.curagaCurePercentage;
+            this.curagaPercentageValueLabel.Text = Properties.Settings.Default.curagaCurePercentage.ToString(CultureInfo.InvariantCulture);
+            this.curagaTargetType.SelectedIndex = Properties.Settings.Default.curagaTargetType;
+            this.curagaTargetName.Text = Properties.Settings.Default.curagaTargetName;
+            this.requiredCuragaNumbers.Value = Properties.Settings.Default.curagaRequiredMembers;
+            
+            // Stop on ....
+            this.pauseOnZoneBox.Checked = Properties.Settings.Default.pauseOnZone;
+            this.pauseOnStartBox.Checked = Properties.Settings.Default.pauseOnStartup;
+
+            // Auto Follow
+            this.autoFollowName.Text = Properties.Settings.Default.autoFollowName;
+            this.autoFollowDistance.Value = Properties.Settings.Default.autoFollowDistance;
+
+            // Devotion
+            this.DevotionBox.Checked = Properties.Settings.Default.DevotionBox;
+            this.DevotionMP.Value = Properties.Settings.Default.DevotionMP;
+            this.DevotionTargetType.SelectedIndex = Properties.Settings.Default.DevotionTargetType;
+            this.DevotionTargetName.Text = Properties.Settings.Default.DevotionTargetName;
+            this.DevotionWhenEngaged.Checked = Properties.Settings.Default.DevotionWhenEngaged;
+
+
+
+
         }
 
         private void curePercentage_ValueChanged(object sender, EventArgs e)
@@ -246,6 +295,10 @@ namespace CurePlease
         private void priorityCurePercentage_ValueChanged(object sender, EventArgs e)
         {
             this.priorityCurePercentageValueLabel.Text = this.priorityCurePercentage.Value.ToString();
+        }
+        private void curagaPercentage_ValueChanged(object sender, EventArgs e)
+        {
+            this.curagaPercentageValueLabel.Text = this.curagaCurePercentage.Value.ToString();
         }
         #endregion        
 
@@ -387,6 +440,7 @@ namespace CurePlease
             Properties.Settings.Default.naPlague = this.naPlague.Checked;
             Properties.Settings.Default.naPoison = this.naPoison.Checked;
             Properties.Settings.Default.naSilence = this.naSilence.Checked;
+            Properties.Settings.Default.naErase = this.naErase.Checked;
             Properties.Settings.Default.lowMPuseitem = this.lowMPuseitem.Checked;
             Properties.Settings.Default.mpMintempitemusage = this.mpMintempitemusage.Value;
             Properties.Settings.Default.monitoredAgiDown = this.monitoredAgiDown.Checked;
@@ -450,6 +504,12 @@ namespace CurePlease
             Properties.Settings.Default.Entrust = this.EntrustBox.Checked;
             Properties.Settings.Default.EnableLuopanSpells = this.EnableLuopanSpells.Checked;
             Properties.Settings.Default.Dematerialize = this.DematerializeBox.Checked;
+            Properties.Settings.Default.BlazeOfGlory = this.BlazeOfGloryBox.Checked;
+            Properties.Settings.Default.AutoTarget = this.autoTarget.Checked;
+            Properties.Settings.Default.autoTargetSpell = this.autoTargetSpell.Text;
+            Properties.Settings.Default.RadialArcana = this.RadialArcanaBox.Checked;
+            Properties.Settings.Default.FullCircle = this.FullCircleBox.Checked;
+            Properties.Settings.Default.RadialArcanaMP = this.RadialArcanaMP.Value;
             Properties.Settings.Default.plTemper = this.plTemper.Checked;
             if (this.plTemperLevel1.Checked)
             {
@@ -471,6 +531,51 @@ namespace CurePlease
             Properties.Settings.Default.plStormSpell_Spell = this.plStormSpell_Spell.SelectedIndex;
             Properties.Settings.Default.plKlimaform = this.plKlimaform.Checked;
             Properties.Settings.Default.plAuspice = this.plAuspice.Checked;
+            Properties.Settings.Default.plAquaveil = this.plAquaveil.Checked;
+
+            Properties.Settings.Default.ConvertMP = this.ConvertMP.Value;
+
+            // CURAGA SPELLS 
+            Properties.Settings.Default.curagaEnabled = this.curagaEnabled.Checked;
+            Properties.Settings.Default.curaga2Enabled = this.curaga2Enabled.Checked;
+            Properties.Settings.Default.curaga3Enabled = this.curaga3Enabled.Checked;
+            Properties.Settings.Default.curaga4Enabled = this.curaga4Enabled.Checked;
+            Properties.Settings.Default.curaga5Enabled = this.curaga5Enabled.Checked;
+
+            Properties.Settings.Default.curagaAmount = Convert.ToInt32(this.curagaAmount.Value);
+            Properties.Settings.Default.curaga2Amount = Convert.ToInt32(this.curaga2Amount.Value);
+            Properties.Settings.Default.curaga3Amount = Convert.ToInt32(this.curaga3Amount.Value);
+            Properties.Settings.Default.curaga4Amount = Convert.ToInt32(this.curaga4Amount.Value);
+            Properties.Settings.Default.curaga5Amount = Convert.ToInt32(this.curaga5Amount.Value);
+
+            Properties.Settings.Default.curagaCurePercentage = this.curagaCurePercentage.Value;
+
+            Properties.Settings.Default.curagaTargetType = this.curagaTargetType.SelectedIndex;
+            Properties.Settings.Default.curagaTargetName = this.curagaTargetName.Text;
+            Properties.Settings.Default.curagaRequiredMembers = this.requiredCuragaNumbers.Value;
+
+            // Stop on ....
+            Properties.Settings.Default.pauseOnZone = this.pauseOnZoneBox.Checked;
+            Properties.Settings.Default.pauseOnStartup = this.pauseOnStartBox.Checked;
+
+            // Auto Follow
+            Properties.Settings.Default.autoFollowName = this.autoFollowName.Text;
+            Properties.Settings.Default.autoFollowDistance = this.autoFollowDistance.Value;
+
+            // Devotion
+            Properties.Settings.Default.DevotionBox = this.DevotionBox.Checked;
+            Properties.Settings.Default.DevotionMP= this.DevotionMP.Value;
+            Properties.Settings.Default.DevotionTargetType = this.DevotionTargetType.SelectedIndex;
+            Properties.Settings.Default.DevotionTargetName = this.DevotionTargetName.Text;
+
+
+
+
+
+
+
+
+
 
             Properties.Settings.Default.Save();            
             this.Close();
@@ -706,6 +811,7 @@ namespace CurePlease
                 this.naPoison.Enabled = false;
                 this.naSilence.Checked = false;
                 this.naSilence.Enabled = false;
+                this.naErase.Enabled = false;
             }
         }
 
@@ -948,6 +1054,9 @@ namespace CurePlease
         #region "== Form Closing Settings"
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
+
+            /*
+
             Properties.Settings.Default.cure1enabled = this.cure1enabled.Checked;
             Properties.Settings.Default.cure2enabled = this.cure2enabled.Checked;
             Properties.Settings.Default.cure3enabled = this.cure3enabled.Checked;
@@ -1134,19 +1243,6 @@ namespace CurePlease
             Properties.Settings.Default.AutoProtectSpell = this.autoProtect.SelectedIndex;
             Properties.Settings.Default.EnableGeoSpells = this.EnableGeoSpells.Checked;
 
-            // New Spells
-            Properties.Settings.Default.indiRecast = this.indiRecast.Value;
-            Properties.Settings.Default.EnableGeoSpells = this.EnableGeoSpells.Checked;
-            Properties.Settings.Default.GEO_engaged = this.GEO_engaged.Checked;
-            Properties.Settings.Default.GeoSpell = this.GEOSpell.SelectedIndex;
-            Properties.Settings.Default.GeoSpell_Target = this.GEOSpell_target.Text;
-            Properties.Settings.Default.IndiSpell = this.INDISpell.SelectedIndex;
-            Properties.Settings.Default.EntrustedIndiSpell = this.entrustINDISpell.SelectedIndex;
-            Properties.Settings.Default.Entrusted_Target = this.entrustSpell_target.Text;
-            Properties.Settings.Default.Entrust = this.EntrustBox.Checked;
-            Properties.Settings.Default.EnableLuopanSpells = this.EnableLuopanSpells.Checked;
-            Properties.Settings.Default.Dematerialize = this.DematerializeBox.Checked;
-
             // Additional PL cast
             Properties.Settings.Default.plTemper = this.plTemper.Checked;
             if (this.plTemperLevel1.Checked)
@@ -1169,13 +1265,45 @@ namespace CurePlease
             Properties.Settings.Default.plStormSpell_Spell = this.plStormSpell_Spell.SelectedIndex;
             Properties.Settings.Default.plKlimaform = this.plKlimaform.Checked;
             Properties.Settings.Default.plAuspice = this.plAuspice.Checked;
+            Properties.Settings.Default.plAquaveil = this.plAquaveil.Checked;
 
+            // New Spells
+            Properties.Settings.Default.indiRecast = this.indiRecast.Value;
+            Properties.Settings.Default.EnableGeoSpells = this.EnableGeoSpells.Checked;
+            Properties.Settings.Default.GEO_engaged = this.GEO_engaged.Checked;
+            Properties.Settings.Default.GeoSpell = this.GEOSpell.SelectedIndex;
+            Properties.Settings.Default.GeoSpell_Target = this.GEOSpell_target.Text;
+            Properties.Settings.Default.IndiSpell = this.INDISpell.SelectedIndex;
+            Properties.Settings.Default.EntrustedIndiSpell = this.entrustINDISpell.SelectedIndex;
+            Properties.Settings.Default.Entrusted_Target = this.entrustSpell_target.Text;
+            Properties.Settings.Default.Entrust = this.EntrustBox.Checked;
+            Properties.Settings.Default.EnableLuopanSpells = this.EnableLuopanSpells.Checked;
+            Properties.Settings.Default.Dematerialize = this.DematerializeBox.Checked;
+            Properties.Settings.Default.BlazeOfGlory = this.BlazeOfGloryBox.Checked;
+            Properties.Settings.Default.AutoTarget = this.autoTarget.Checked;
+            Properties.Settings.Default.FullCircle = this.FullCircleBox.Checked;
+            Properties.Settings.Default.autoTargetSpell = this.autoTargetSpell.Text; 
+
+            // CURAGA SPELLS 
+            Properties.Settings.Default.curagaEnabled = this.curagaEnabled.Checked;
+            Properties.Settings.Default.curaga2Enabled = this.curaga2Enabled.Checked;
+            Properties.Settings.Default.curaga3Enabled = this.curaga3Enabled.Checked;
+            Properties.Settings.Default.curaga4Enabled = this.curaga4Enabled.Checked;
+            Properties.Settings.Default.curaga5Enabled = this.curaga5Enabled.Checked;
+
+            Properties.Settings.Default.curagaAmount = Convert.ToInt32(this.curagaAmount.Value);
+            Properties.Settings.Default.curaga2Amount = Convert.ToInt32(this.curaga2Amount.Value);
+            Properties.Settings.Default.curaga3Amount = Convert.ToInt32(this.curaga3Amount.Value);
+            Properties.Settings.Default.curaga4Amount = Convert.ToInt32(this.curaga4Amount.Value);
+            Properties.Settings.Default.curaga5Amount = Convert.ToInt32(this.curaga5Amount.Value);
+
+            // Stop on ....
+            Properties.Settings.Default.pauseOnZone = this.pauseOnZoneBox.Checked;
+            Properties.Settings.Default.pauseOnStartup = this.pauseOnStartBox.Checked;
 
             Properties.Settings.Default.Save();
-        }
 
-        private void plShellralevel_ValueChanged(object sender, EventArgs e)
-        {
+            */
 
         }
     }
