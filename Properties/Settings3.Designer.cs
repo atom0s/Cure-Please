@@ -12,7 +12,7 @@ namespace CurePlease.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.1.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -2228,6 +2228,545 @@ namespace CurePlease.Properties {
             }
             set {
                 this["EnableLuopanSpells"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool BlazeOfGlory {
+            get {
+                return ((bool)(this["BlazeOfGlory"]));
+            }
+            set {
+                this["BlazeOfGlory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoTarget {
+            get {
+                return ((bool)(this["AutoTarget"]));
+            }
+            set {
+                this["AutoTarget"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dia II")]
+        public string autoTargetSpell {
+            get {
+                return ((string)(this["autoTargetSpell"]));
+            }
+            set {
+                this["autoTargetSpell"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RadialArcana {
+            get {
+                return ((bool)(this["RadialArcana"]));
+            }
+            set {
+                this["RadialArcana"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        public decimal RadialArcanaMP {
+            get {
+                return ((decimal)(this["RadialArcanaMP"]));
+            }
+            set {
+                this["RadialArcanaMP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection MPItems {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["MPItems"]));
+            }
+            set {
+                this["MPItems"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FullCircle {
+            get {
+                return ((bool)(this["FullCircle"]));
+            }
+            set {
+                this["FullCircle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool curagaEnabled {
+            get {
+                return ((bool)(this["curagaEnabled"]));
+            }
+            set {
+                this["curagaEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool curaga2Enabled {
+            get {
+                return ((bool)(this["curaga2Enabled"]));
+            }
+            set {
+                this["curaga2Enabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool curaga3Enabled {
+            get {
+                return ((bool)(this["curaga3Enabled"]));
+            }
+            set {
+                this["curaga3Enabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool curaga4Enabled {
+            get {
+                return ((bool)(this["curaga4Enabled"]));
+            }
+            set {
+                this["curaga4Enabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool curaga5Enabled {
+            get {
+                return ((bool)(this["curaga5Enabled"]));
+            }
+            set {
+                this["curaga5Enabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int curagaAmount {
+            get {
+                return ((int)(this["curagaAmount"]));
+            }
+            set {
+                this["curagaAmount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        public int curaga2Amount {
+            get {
+                return ((int)(this["curaga2Amount"]));
+            }
+            set {
+                this["curaga2Amount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("500")]
+        public int curaga3Amount {
+            get {
+                return ((int)(this["curaga3Amount"]));
+            }
+            set {
+                this["curaga3Amount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("800")]
+        public int curaga4Amount {
+            get {
+                return ((int)(this["curaga4Amount"]));
+            }
+            set {
+                this["curaga4Amount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        public int curaga5Amount {
+            get {
+                return ((int)(this["curaga5Amount"]));
+            }
+            set {
+                this["curaga5Amount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        public int curagaCurePercentage {
+            get {
+                return ((int)(this["curagaCurePercentage"]));
+            }
+            set {
+                this["curagaCurePercentage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public decimal ConvertMP {
+            get {
+                return ((decimal)(this["ConvertMP"]));
+            }
+            set {
+                this["ConvertMP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int RadialArcanaSpell {
+            get {
+                return ((int)(this["RadialArcanaSpell"]));
+            }
+            set {
+                this["RadialArcanaSpell"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool pauseOnZone {
+            get {
+                return ((bool)(this["pauseOnZone"]));
+            }
+            set {
+                this["pauseOnZone"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool pauseOnStartup {
+            get {
+                return ((bool)(this["pauseOnStartup"]));
+            }
+            set {
+                this["pauseOnStartup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool plAquaveil {
+            get {
+                return ((bool)(this["plAquaveil"]));
+            }
+            set {
+                this["plAquaveil"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string autoFollowName {
+            get {
+                return ((string)(this["autoFollowName"]));
+            }
+            set {
+                this["autoFollowName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public decimal autoFollowDistance {
+            get {
+                return ((decimal)(this["autoFollowDistance"]));
+            }
+            set {
+                this["autoFollowDistance"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int curagaTargetType {
+            get {
+                return ((int)(this["curagaTargetType"]));
+            }
+            set {
+                this["curagaTargetType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string curagaTargetName {
+            get {
+                return ((string)(this["curagaTargetName"]));
+            }
+            set {
+                this["curagaTargetName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool naErase {
+            get {
+                return ((bool)(this["naErase"]));
+            }
+            set {
+                this["naErase"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public decimal curagaRequiredMembers {
+            get {
+                return ((decimal)(this["curagaRequiredMembers"]));
+            }
+            set {
+                this["curagaRequiredMembers"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DevotionBox {
+            get {
+                return ((bool)(this["DevotionBox"]));
+            }
+            set {
+                this["DevotionBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("400")]
+        public decimal DevotionMP {
+            get {
+                return ((decimal)(this["DevotionMP"]));
+            }
+            set {
+                this["DevotionMP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int DevotionTargetType {
+            get {
+                return ((int)(this["DevotionTargetType"]));
+            }
+            set {
+                this["DevotionTargetType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DevotionTargetName {
+            get {
+                return ((string)(this["DevotionTargetName"]));
+            }
+            set {
+                this["DevotionTargetName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DevotionWhenEngaged {
+            get {
+                return ((bool)(this["DevotionWhenEngaged"]));
+            }
+            set {
+                this["DevotionWhenEngaged"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Hate_SpellType {
+            get {
+                return ((int)(this["Hate_SpellType"]));
+            }
+            set {
+                this["Hate_SpellType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool GeoAOE_Engaged {
+            get {
+                return ((bool)(this["GeoAOE_Engaged"]));
+            }
+            set {
+                this["GeoAOE_Engaged"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string autoTarget_target {
+            get {
+                return ((string)(this["autoTarget_target"]));
+            }
+            set {
+                this["autoTarget_target"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool healLowMP {
+            get {
+                return ((bool)(this["healLowMP"]));
+            }
+            set {
+                this["healLowMP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool standAtMP {
+            get {
+                return ((bool)(this["standAtMP"]));
+            }
+            set {
+                this["standAtMP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("50")]
+        public decimal standAtMP_Percentage {
+            get {
+                return ((decimal)(this["standAtMP_Percentage"]));
+            }
+            set {
+                this["standAtMP_Percentage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool specifiedEngageTarget {
+            get {
+                return ((bool)(this["specifiedEngageTarget"]));
+            }
+            set {
+                this["specifiedEngageTarget"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        public decimal healWhenMPBelow {
+            get {
+                return ((decimal)(this["healWhenMPBelow"]));
+            }
+            set {
+                this["healWhenMPBelow"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool enableFastCast_Mode {
+            get {
+                return ((bool)(this["enableFastCast_Mode"]));
+            }
+            set {
+                this["enableFastCast_Mode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
+        public string IpAddress {
+            get {
+                return ((string)(this["IpAddress"]));
+            }
+            set {
+                this["IpAddress"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool lowerTier {
+            get {
+                return ((bool)(this["lowerTier"]));
+            }
+            set {
+                this["lowerTier"] = value;
             }
         }
     }
